@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        :root {
+            --hero-purple: #c119e2;
+            --underline: #531460;
+            --skill-bar: #e0e0e0;
+            --para-text: #5a5b5c;
+            --card-colur: #ffffff;
+            --blog-link: #0673af;
+
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+
+        /* body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #25282b;
+            margin: 0px;
+             background-color: rgb(248, 244, 240);
+
+        } */
+        /* header */
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            align-items: center;
+            gap: 2px;
+            list-style: none;
+            color: black;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        body {
+            background-color: whitesmoke;
+
+        }
+
+        /* hero section */
+
+
+        .hero-content {
+            display: grid;
+            padding: 6rem;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+            background: linear-gradient(to right, #ad70e6, #490879);
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        .hero-text-n1 {
+            color: var(--card-colur);
+            font-weight: bold;
+        }
+
+        .hero-text-n2 {
+            color: rgb(238, 187, 86);
+            font-weight: bold;
+        }
+
+        .hero-text-p1 {
+            padding: 30px 0;
+            color: white;
+            font-size: 1rem;
+            line-height: 1.4;
+
+        }
+
+        .hero-btns {
+
+            display: flex;
+            gap: 1rem;
+
+        }
+
+        .btn {
+            text-align: center;
+            padding: 8px 15px;
+            width: 100px;
+            border: 2px solid var(--card-colur);
+            border-radius: 20px;
+            color: var(--card-colur);
+            transition:transform 0.5s ease;
+
+        }
+        .btn:hover{
+            transform: scale(1.1);
+        }
+
+        .hero-btn1 {
+            color: var(--underline);
+            background-color: var(--card-colur);
+        }
+
+        .hero-btn2 {
+            color: var(--card-colur);
+
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            border: 5px solid var(--underline);
+            transition:transform 0.5s ease;
+           
+
+        }
+        .hero-image img:hover{
+            transform: scale(1.1);
+        }
+
+        /* aboutme page */
+        .section-title {
+            padding-top: 2rem;
+            text-align: center;
+            position: relative;
+            margin-bottom: 40px;
+
+
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: var(--underline);
+            left: 50%;
+            transform: translateX(-50%);
+            top: 60px;
+
+
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 1rem;
+            gap: 2rem;
+        }
+
+        .about-text {
+            font-size: 15px;
+            line-height: 1.2;
+            color: var(--para-text);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+
+        .about-cards {
+            align-items: center;
+            display: grid;
+            grid-template-rows: auto;
+            gap: 2rem;
+            
+
+        }
+        
+
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: var(--card-colur);
+            transition:transform 0.5s ease;
+
+            height: 100px;
+            background-color: #692d76;
+            border-radius: 8px;
+
+        }
+        .card:hover{
+            transform: scale(1.1);
+        }
+
+        /* skill and technologies */
+        .skills-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 1rem;
+
+
+
+        }
+
+        .skill {
+            background-color: var(--card-colur);
+            padding: 1rem;
+            transition:transform 0.5s ease;
+            border-radius: 10px;
+
+        }
+        .skill:hover{
+            transform: scale(1.1);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--underline);
+        }
+
+        .skill-bar {
+            background: var(--skill-bar);
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        .skill-level {
+            content: "";
+            position: absolute;
+            height: 100%;
+            background-color: var(--underline);
+            border-radius: 5px;
+        }
+
+        /* time line */
+        .experience-content {
+            display: grid;
+            position: relative;
+            padding: 1rem;
+
+        }
+
+        .experience-item-contant p {
+            color: var(--para-text);
+        }
+
+        .experience-content::before {
+            content: "";
+            position: absolute;
+            background-color: var(--underline);
+            width: 2px;
+            top: 0;
+            left: 29px;
+            bottom: 0;
+        }
+
+        .experience-item {
+            display: flex;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item-contant {
+             transition:transform 0.5s ease;
+            padding: 2rem;
+            background-color: var(--card-colur);
+            border-radius: 8px;
+            margin-left: 2rem;
+        }
+        .experience-item-contant:hover{
+            transform: scale(1.1);
+        }
+
+
+        .experience-item-icon {
+            font-size: 20px;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            padding: 1px;
+            color: var(--underline);
+
+        }
+
+
+        /* service */
+        .service-content-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 1rem;
+            gap: 2rem;
+
+        }
+
+        .service-card {
+            text-align: center;
+            background-color: var(--card-colur);
+            padding: 8px;
+            border-radius: 10px;
+            transition:transform 0.5s ease;
+        }
+        .service-card:hover{
+            transform: scale(1.1);
+        }
+
+        .service-card-icon {
+            font-size: 2rem;
+            color: var(--underline);
+        }
+
+
+        .service-card-p1 {
+            font-size: 12px;
+            line-height: 1.5;
+            color: var(--para-text);
+
+        }
+
+        /* blog */
+
+        .blog-sub-title {
+            text-align: center;
+            color: var(--para-text);
+        }
+
+        .blog-content {
+            display: grid;
+            grid-template-rows: 1fr;
+            
+
+        }
+        
+
+        .blog-item {
+            display: grid;
+            grid-template-rows: 1fr;
+            height: 250px;
+            padding: 1rem;
+            transition:transform 0.5s ease;
+            border-radius: 20px;
+            overflow: hidden;
+
+        }
+        .blog-item:hover{
+            transform: scale(1.1);
+        }
+
+
+        .blog-icon {
+            background-color: var(--underline);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--card-colur);
+        }
+
+        .blog-text {
+            background-color: var(--card-colur);
+            padding: 1rem;
+
+        }
+
+        .blog-text p {
+            color: var(--para-text);
+            margin-bottom: 1rem;
+        }
+
+        .blog-text-link {
+            color: var(--blog-link);
+            padding: 1rem;
+
+
+        }
+
+        /* contact */
+        .contact-section {
+            display: grid;
+            grid-template-rows: 1fr;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .contact-form {
+            display: grid;
+
+
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            border: none;
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+
+        .contact-form textarea {
+            height: 50px;
+        }
+
+        .contact-form button {
+            border: none;
+            padding: 15px;
+            border-radius: 15px;
+            background-color: var(--card-colur);
+            color: var(--hero-purple);
+        }
+
+        .contact-email-cards {
+            display: flex;
+            gap: 1rem;
+            border-radius: 15px;
+            background-color: var(--card-colur);
+            padding: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon-card {
+            font-size: 2rem;
+            color: var(--underline);
+        }
+
+        .contact-email-card p {
+            color: var(--para-text);
+            font-style: italic;
+
+        }
+
+        .soical-links {
+            text-align: center;
+
+
+        }
+
+        .soical-links a {
+           
+            margin: -16px;
+            border: none;
+            color: blue;
+
+        }
+
+        footer {
+            display: flex;
+            background-color: var(--underline);
+            color: var(--card-colur);
+            height: 5rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        @media only screen and (min-width: 678px) {
+
+            .hero-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+            .about-cards {
+
+                grid-template-columns: auto auto;
+
+
+
+            }
+
+            .service-content-cards {
+
+                grid-template-columns: repeat(2, 1fr);
+
+
+            }
+
+            .experience-content::before,
+            .experience-item-icon {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .experience-item:nth-child(odd) {
+                flex-direction: row;
+            }
+
+            .experience-item:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .experience-item-contant {
+                margin-left: 0;
+                width: 35%;
+            }
+
+            .skills-content {
+                grid-template-columns: repeat(3, 1fr);
+
+            }
+
+            .service-content-cards {
+
+                grid-template-columns: repeat(3, 1fr);
+
+            }
+
+            .blog-content {
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-section {
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .hero-content {
+                grid-template-columns: auto auto;
+            }
+
+            .about-cards {
+
+                grid-template-columns: auto auto auto;
+
+
+            }
+
+            .skills-content {
+                grid-template-columns: repeat(4, 1fr);
+
+            }
+
+            .service-content-cards {
+
+                grid-template-columns: repeat(3, 1fr);
+
+
+            }
+
+            .service-content-cards {
+
+                grid-template-columns: repeat(3, 1fr);
+
+            }
+
+            .experience-content::before,
+            .experience-item-icon {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .experience-item:nth-child(odd) {
+                flex-direction: row;
+            }
+
+            .experience-item:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .experience-item-contant {
+                width: 40%;
+            }
+
+
+            .blog-content {
+
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .contact-section {
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="nav-logo">Ruskan</div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Services</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-text-n1">HI, Im <span class="hero-text-n2">Mohammed Ruskan</span></h1>
+                <p class="hero-text-p1">FULL STACK WEB DEVELOPER, I DESIGN AND CODE BEAUTIFUL THINGS, AND I LOVE WHAT I
+                    DO.
+                </p>
+                <div class="hero-btns">
+                    <a href="#" class="btn hero-btn1">Hire Me</a>
+                    <a href="#" class="btn hero-btn2">my services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/img/images.jpg" alt="Hero Image">
+            </div>
+    </section>
+    <!-- about page -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                    faucibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                    faucibus.
+                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                    faucibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                    faucibus.
+                    Nulla rhoncus feugiat eros quis consectetur.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                    faucibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                    faucibus.
+                    Nulla rhoncus feugiat eros quis consectetur.</p>
+            </div>
+            <div class="about-cards">
+                <div class="card">
+                    <h3>5+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="card">
+                    <h3>10+</h3>
+                    <p>Project Completed</p>
+                </div>
+                <div class="card">
+                    <h3>8+</h3>
+                    <p>Satisfied Clints</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- skills and technologies -->
+    <section id="skills">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-content">
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-php"></i></i>
+                </div>
+                <h5 class="skill-h5">HTML</h5>
+                <p class="skill-p5">Advance level</p>
+
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 20%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-php"></i></i>
+                </div>
+                <h5 class="skill-h5">HTML</h5>
+                <p class="skill-p5">Advance level</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <h5 class="skill-h5">HTML</h5>
+                <p class="skill-p5">Advance level</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 60%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <h5 class="skill-h5">HTML</h5>
+                <p class="skill-p5">Advance level</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 75%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <h5 class="skill-h5">HTML</h5>
+                <p class="skill-p5">Advance level</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <h5 class="skill-h5">HTML</h5>
+                <p class="skill-p5">Advance level</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <h5 class="skill-h5">HTML</h5>
+                <p class="skill-p5">Advance level</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 60%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <h5 class="skill-h5">HTML</h5>
+                <p class="skill-p5">Advance level</p>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 90%;"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Experience timeline -->
+    <section id="experience">
+        <h2 class="section-title">Experience timeline</h2>
+        <div class="experience-content">
+            <div class="experience-item">
+                <div class="experience-item-contant">
+                    <h3>Job Title 1</h3>
+                    <p>2020-present</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                        faucibus.
+                    </p>
+                </div>
+                <div class="experience-item-icon">
+                    <i class="fa-regular fa-circle-dot"></i>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-item-contant">
+                    <h3>Job Title 1</h3>
+                    <p>2020-present</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                        faucibus.
+                    </p>
+                </div>
+                <div class="experience-item-icon">
+                    <i class="fa-regular fa-circle-dot"></i>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-item-contant">
+                    <h3>Job Title 1</h3>
+                    <p>2020-present</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                        faucibus.
+                    </p>
+                </div>
+                <div class="experience-item-icon">
+                    <i class="fa-regular fa-circle-dot"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--   services offered -->
+    <section id="service">
+        <h2 class="section-title">services offered </h2>
+        <div class="service-content-cards">
+            <div class="service-card">
+                <div class="service-card-icon"> <i class="fa-brands fa-php"></i></div>
+                <h4 class="service-card-h3">Web development</h4>
+                <p class="service-card-p1">Bulding responsive and mordern Websites using HTML,CSS and javascripts</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card-icon"> <i class="fa-brands fa-php"></i></div>
+                <h4 class="service-card-h3">Web development</h4>
+                <p class="service-card-p1">Bulding responsive and mordern Websites using HTML,CSS and javascripts</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card-icon"> <i class="fa-brands fa-php"></i></div>
+                <h4 class="service-card-h3">Web development</h4>
+                <p class="service-card-p1">Bulding responsive and mordern Websites using HTML,CSS and javascripts</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card-icon"> <i class="fa-brands fa-php"></i></div>
+                <h4 class="service-card-h3">Web development</h4>
+                <p class="service-card-p1">Bulding responsive and mordern Websites using HTML,CSS and javascripts</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card-icon"> <i class="fa-brands fa-php"></i></div>
+                <h4 class="service-card-h3">Web development</h4>
+                <p class="service-card-p1">Bulding responsive and mordern Websites using HTML,CSS and javascripts</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card-icon"> <i class="fa-brands fa-php"></i></div>
+                <h4 class="service-card-h3">Web development</h4>
+                <p class="service-card-p1">Bulding responsive and mordern Websites using HTML,CSS and javascripts</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Latest from blog -->
+    <section id="blog">
+        <h2 class="section-title">Latest from Blog</h2>
+        <div class="blog-sub-title">visit our page</div>
+        <div class="blog-content">
+
+            <div class="blog-item">
+                <div class="blog-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <div class="blog-text">
+                    <h3>Laravel best peactice</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                        faucibus.</p>
+                    <a href="#" class="blog-text-link">Read More</a>
+                </div>
+            </div>
+            <div class="blog-item">
+                <div class="blog-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <div class="blog-text">
+                    <h3>Laravel best peactice</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                        faucibus.</p>
+                    <a href="#" class="blog-text-link">Read More</a>
+                </div>
+            </div>
+            <div class="blog-item">
+                <div class="blog-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <div class="blog-text">
+                    <h3>Laravel best peactice</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et
+                        faucibus.</p>
+                    <a href="#" class="blog-text-link">Read More</a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- get in touch -->
+    <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-section">
+            <div class="contact-form">
+                <label>Name</label>
+                <input type="text" placeholder="Name">
+                <label>Message</label>
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send Message</button>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-email">
+                    <div class="contact-email-cards">
+                        <div class="contact-icon-card">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-email-card">
+                            <h4>Email</h4>
+                            <p>example@email.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-email-cards">
+                        <div class="contact-icon-card">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-email-card">
+                            <h4>Email</h4>
+                            <p>example@email.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-email-cards">
+                        <div class="contact-icon-card">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-email-card">
+                            <h4>Email</h4>
+                            <p>example@email.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-email-cards">
+                        <div class="contact-icon-card">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-email-card">
+                            <h4>Email</h4>
+                            <p>example@email.com</p>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="soical-links">
+
+            <a href="https://www.linkedin.com/in/mohammed-ruskan-0a1b3b1b2/" target="_blank" class="btn"><i
+                    class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/mohammed-ruskan-0a1b3b1b2/" target="_blank" class="btn"><i
+                    class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/mohammed-ruskan-0a1b3b1b2/" target="_blank" class="btn"><i
+                    class="fas fa-envelope"></i></a>
+        </div>
+
+
+    </section>
+</body>
+<footer>
+    <p>&copy; 2024 Mohammed Ruskan. All rights reserved.</p>
+</footer>
+
+</html>
